@@ -8,14 +8,17 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from the current directory
-app.use(express.static(__dirname));
+// Serve static files from the public directory
+app.use(express.static('public'));
 
 // Serve index.html for all routes (SPA support)
 app.get('*', (req, res) => {
-    res.sendFile(join(__dirname, 'index.html'));
+    res.sendFile(join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-}); 
+// Only start the server if we're not in production
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Development server running at http://localhost:${PORT}`);
+    });
+} 

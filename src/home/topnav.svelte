@@ -26,6 +26,21 @@
         // Prevent scrolling when menu is open
         document.body.style.overflow = isMenuOpen ? 'hidden' : '';
     };
+
+    // Add this function to handle scroll to sections
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const navHeight = document.querySelector('.main-nav').offsetHeight;
+            const elementPosition = element.offsetTop;
+            window.scrollTo({
+                top: elementPosition - navHeight,
+                behavior: 'smooth'
+            });
+        }
+        isMenuOpen = false;
+        document.body.style.overflow = '';
+    };
 </script>
 
 <div class="main-nav" class:scrolled={isScrolled}>
@@ -42,16 +57,15 @@
         <div></div>
     </div>
 
-    <div class="navigation" class:active={isMenuOpen}>
+    <nav class="navigation" class:active={isMenuOpen}>
         <ul>
             {#each ['Home', 'About', 'Projects', 'Contact'] as item, i}
-                <li>
+                <li style="--item-index: {i}">
                     <a 
                         href="#{item.toLowerCase()}" 
                         class:active={item === 'Home'}
-                        on:click={() => {
-                            isMenuOpen = false;
-                            document.body.style.overflow = '';
+                        on:click|preventDefault={() => {
+                            scrollToSection(item.toLowerCase());
                         }}
                     >
                         {item}
@@ -59,5 +73,12 @@
                 </li>
             {/each}
         </ul>
-    </div>
+    </nav>
 </div>
+
+<!-- Add some spacing below the fixed navbar -->
+<style>
+    :global(body) {
+        padding-top: 77px; /* Adjust this value based on your navbar height */
+    }
+</style>

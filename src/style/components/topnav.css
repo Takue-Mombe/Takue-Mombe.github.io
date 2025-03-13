@@ -16,16 +16,34 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    transition: background 0.3s;
+    padding: 1rem 4rem; /* Increased horizontal padding */
+    transition: all 0.3s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav.scrolled {
-    background: var(--cool-gray);
+    background: rgba(253, 255, 247, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.7rem 4rem;
+}
+
+.logo {
+    flex: 0 0 auto;
 }
 
 .logo img {
-    height: 50px; /* Adjust logo size */
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.main-nav.scrolled .logo img {
+    height: 40px;
 }
 
 .hamburger {
@@ -57,7 +75,7 @@ body {
 }
 
 .navigation {
-    display: flex;
+    margin-left: auto;
 }
 
 .navigation ul {
@@ -65,15 +83,33 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
+    gap: 2rem;
 }
 
 .navigation a {
     text-decoration: none;
     color: var(--federal-blue);
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    display: inline-block;
+}
+
+/* Fancy hover effect */
+.navigation a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--tomato);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
 }
 
 .navigation a::after {
@@ -81,19 +117,55 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 2px;
     background: var(--tomato);
-    transition: width 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navigation a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .navigation a:hover::after {
-    width: 100%;
+    transform: scaleX(1);
+    transform-origin: right;
 }
 
 .navigation a:hover {
     color: var(--tomato);
     transform: translateY(-2px);
+}
+
+/* Active state for current page */
+.navigation a.active {
+    color: var(--tomato);
+}
+
+.navigation a.active::before,
+.navigation a.active::after {
+    transform: scaleX(1);
+    background: var(--tomato);
+}
+
+/* Add this new animation for menu items */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navigation li {
+    animation: fadeInDown 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--item-index));
 }
 
 /* Mobile Styles */

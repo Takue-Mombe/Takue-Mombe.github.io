@@ -1,0 +1,151 @@
+:root {
+    --davys-gray: #50514fff;
+    --cool-gray: #8e8dbeff;
+    --baby-powder: #fdfff7ff;
+    --tomato: #fb4d3dff;
+    --federal-blue: #190e4fff;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-nav {
+    background: var(--baby-powder);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    transition: background 0.3s;
+}
+
+.main-nav.scrolled {
+    background: var(--cool-gray);
+}
+
+.logo img {
+    height: 50px; /* Adjust logo size */
+}
+
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 2px;
+    background: var(--federal-blue);
+    margin: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Animation */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+    background: var(--tomato);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+    background: var(--tomato);
+}
+
+.navigation {
+    display: flex;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--federal-blue);
+    padding: 0.8rem 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--tomato);
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+    width: 100%;
+}
+
+.navigation a:hover {
+    color: var(--tomato);
+    transform: translateY(-2px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        background: rgba(253, 255, 247, 0.98);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        backdrop-filter: blur(5px);
+    }
+
+    .navigation.active {
+        right: 0;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .navigation li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    .navigation.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navigation a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+
+    /* Stagger animation delays for menu items */
+    .navigation li:nth-child(1) { transition-delay: 0.1s; }
+    .navigation li:nth-child(2) { transition-delay: 0.2s; }
+    .navigation li:nth-child(3) { transition-delay: 0.3s; }
+    .navigation li:nth-child(4) { transition-delay: 0.4s; }
+}

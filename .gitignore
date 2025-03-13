@@ -1,4 +1,4 @@
 /node_modules/
-/public/build/
-
 .DS_Store
+# Remove or comment out the following line if it exists
+# /public/build/

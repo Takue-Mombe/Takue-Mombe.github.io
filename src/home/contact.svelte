@@ -1,74 +1,17 @@
 <script>
     import '../style/components/contact.css'
     import { onMount } from 'svelte';
-</script>
 
-<section class="contact-section" id="contact">
-    <div id="particles-contact" class="particles-js"></div>
-    <div class="contact-container">
-        <h2>Get in Touch</h2>
-        <p class="contact-description">Have a question or want to work together? Drop me a message!</p>
-        
-        <form class="contact-form" on:submit|preventDefault={handleSubmit}>
-            <div class="form-group">
-                <input 
-                    type="text" 
-                    name="name" 
-                    bind:value={formData.name}
-                    placeholder="Your Name"
-                    required
-                />
-            </div>
-            
-            <div class="form-group">
-                <input 
-                    type="email" 
-                    name="email" 
-                    bind:value={formData.email}
-                    placeholder="Your Email"
-                    required
-                />
-            </div>
-            
-            <div class="form-group">
-                <input 
-                    type="text" 
-                    name="subject" 
-                    bind:value={formData.subject}
-                    placeholder="Subject"
-                    required
-                />
-            </div>
-            
-            <div class="form-group">
-                <textarea 
-                    name="message" 
-                    bind:value={formData.message}
-                    placeholder="Your Message"
-                    rows="5"
-                    required
-                ></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-        </form>
-
-        {#if submitStatus}
-            <div class="status-message {submitStatus.type}">
-                {submitStatus.message}
-            </div>
-        {/if}
-    </div>
+    let formData = {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    };
     
-    <!-- Floating social buttons -->
-    <div class="floating-socials">
-        <!-- ... existing social buttons ... -->
-    </div>
-</section>
+    let isSubmitting = false;
+    let submitStatus = null;
 
-<script>
     onMount(() => {
         particlesJS('particles-contact', {
             particles: {
@@ -140,16 +83,6 @@
         });
     });
 
-    let formData = {
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    };
-    
-    let isSubmitting = false;
-    let submitStatus = null;
-
     async function handleSubmit() {
         isSubmitting = true;
         submitStatus = null;
@@ -182,6 +115,82 @@
         }
     }
 </script>
+
+<section class="contact-section" id="contact">
+    <div id="particles-contact" class="particles-js"></div>
+    <div class="contact-container">
+        <h2>Get in Touch</h2>
+        <p class="contact-description">Have a question or want to work together? Drop me a message!</p>
+        
+        <form class="contact-form" on:submit|preventDefault={handleSubmit}>
+            <div class="form-group">
+                <input 
+                    type="text" 
+                    name="name" 
+                    bind:value={formData.name}
+                    placeholder="Your Name"
+                    required
+                />
+            </div>
+            
+            <div class="form-group">
+                <input 
+                    type="email" 
+                    name="email" 
+                    bind:value={formData.email}
+                    placeholder="Your Email"
+                    required
+                />
+            </div>
+            
+            <div class="form-group">
+                <input 
+                    type="text" 
+                    name="subject" 
+                    bind:value={formData.subject}
+                    placeholder="Subject"
+                    required
+                />
+            </div>
+            
+            <div class="form-group">
+                <textarea 
+                    name="message" 
+                    bind:value={formData.message}
+                    placeholder="Your Message"
+                    rows="5"
+                    required
+                ></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+            </button>
+        </form>
+
+        {#if submitStatus}
+            <div class="status-message {submitStatus.type}">
+                {submitStatus.message}
+            </div>
+        {/if}
+    </div>
+    
+    <!-- Floating social buttons -->
+    <div class="floating-socials">
+        <a href="https://wa.me/788754745" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">WhatsApp</span>
+        </a>
+        <a href="https://x.com/JoseMombe" target="_blank" rel="noopener noreferrer" class="social-btn twitter">
+            <i class="fab fa-x-twitter"></i>
+            <span class="tooltip">Twitter</span>
+        </a>
+        <a href="mailto:mombejose@gmail.com" class="social-btn email">
+            <i class="fas fa-envelope"></i>
+            <span class="tooltip">Email</span>
+        </a>
+    </div>
+</section>
 
 <style>
     /* Add to existing styles */

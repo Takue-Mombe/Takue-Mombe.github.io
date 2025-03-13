@@ -28,61 +28,46 @@
     padding: 0 2rem;
 }
 
-/* Modern Header */
 .about-header {
+    text-align: center;
     margin-bottom: 4rem;
-    position: relative;
-}
-
-.header-content {
-    position: relative;
-    display: inline-block;
 }
 
 .section-tag {
     background: rgba(52, 152, 219, 0.1);
     color: #3498db;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
     font-size: 0.9rem;
     margin-bottom: 1rem;
     display: inline-block;
 }
 
-.tech-line {
-    height: 2px;
-    width: 100px;
-    background: linear-gradient(90deg, #3498db, transparent);
-    margin-top: 1rem;
-}
-
 .about-header h1 {
     font-size: 3.5rem;
-    margin: 0.5rem 0;
     background: linear-gradient(45deg, #3498db, #2ecc71);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 1rem 0;
     font-weight: 800;
 }
 
-/* Grid Layout */
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* Cards */
 .about-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 2rem;
+    transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.6s ease;
 }
 
 .about-card.visible {
@@ -90,180 +75,107 @@
     transform: translateY(0);
 }
 
-/* Profile Card */
-.profile {
+.about-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Stats Card */
+.stats-card {
     grid-column: 1 / -1;
-}
-
-.profile-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.avatar {
-    position: relative;
-    width: 100px;
-    height: 100px;
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #3498db;
-}
-
-.status-indicator {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    width: 12px;
-    height: 12px;
-    background: #2ecc71;
-    border-radius: 50%;
-    border: 2px solid #1e293b;
-}
-
-.profile-info h2 {
-    color: white;
-    margin: 0;
-    font-size: 1.8rem;
-}
-
-.role {
-    color: #94a3b8;
-    font-size: 1.1rem;
-}
-
-.profile-stats {
     display: flex;
     justify-content: space-around;
-    margin-top: 2rem;
+    align-items: center;
     text-align: center;
+    padding: 3rem 2rem;
 }
 
-.stat .number {
-    color: #3498db;
-    font-size: 2rem;
-    font-weight: bold;
-    display: block;
+.stat-item {
+    color: white;
 }
 
-.stat .label {
+.stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
     color: #94a3b8;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
-/* Tech Stack */
-.tech-categories {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+/* Role Card */
+.role-card {
+    color: white;
 }
 
-.tech-category h3 {
-    color: #3498db;
-    margin: 0 0 1rem 0;
-    font-size: 1.2rem;
-}
-
-.tech-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.tech-item {
+.role-header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.role-header i {
+    font-size: 1.5rem;
+    color: #3498db;
+}
+
+.role-header h2 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.time-badge {
+    display: inline-block;
     background: rgba(52, 152, 219, 0.1);
-    padding: 0.5rem 1rem;
+    color: #3498db;
+    padding: 0.4rem 1rem;
     border-radius: 20px;
-    color: white;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    margin-top: 1rem;
 }
 
-.tech-item:hover {
-    background: #3498db;
-    transform: translateY(-2px);
+/* Project Card */
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-/* Timeline */
-.timeline-items {
-    position: relative;
-    padding-left: 2rem;
+.project-icon {
+    font-size: 1.5rem;
 }
 
-.timeline-items::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(52, 152, 219, 0.3);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-.timeline-marker {
-    position: absolute;
-    left: -2rem;
-    width: 1rem;
-    height: 1rem;
-    background: #3498db;
-    border-radius: 50%;
-    transform: translateX(50%);
-}
-
-.timeline-content h3 {
+.project-header h2 {
+    font-size: 1.3rem;
     color: white;
     margin: 0;
-    font-size: 1.1rem;
 }
 
-.timeline-content p {
+.project-content p {
     color: #94a3b8;
-    margin: 0.5rem 0 0 0;
+    margin-bottom: 1.5rem;
 }
 
-/* Connect Grid */
-.connect-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.connect-item {
+.tech-tags {
     display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-.connect-item.email { background: #2ecc71; }
-.connect-item.linkedin { background: #3498db; }
-.connect-item.github { background: #2d3436; }
-.connect-item.status {
-    background: rgba(46, 204, 113, 0.1);
-    color: #2ecc71;
-}
-
-.connect-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.tech-tags span {
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
 }
 
 /* Mobile Responsive */
@@ -284,19 +196,13 @@
         grid-template-columns: 1fr;
     }
 
-    .profile-header {
+    .stats-card {
         flex-direction: column;
-        text-align: center;
-        gap: 1rem;
+        gap: 2rem;
     }
 
-    .profile-stats {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .connect-grid {
-        grid-template-columns: 1fr;
+    .stat-value {
+        font-size: 2.5rem;
     }
 }
 
@@ -305,12 +211,12 @@
         font-size: 2rem;
     }
 
-    .tech-items {
-        gap: 0.5rem;
+    .about-card {
+        padding: 1.5rem;
     }
 
-    .tech-item {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
+    .role-header h2,
+    .project-header h2 {
+        font-size: 1.1rem;
     }
 }

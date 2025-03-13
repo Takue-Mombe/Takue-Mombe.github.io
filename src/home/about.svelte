@@ -49,124 +49,51 @@
     
     <div class="about-content">
         <div class="about-header">
-            <div class="header-content">
-                <span class="section-tag">Experience</span>
-                <h1>My Journey</h1>
-                <div class="tech-line"></div>
-            </div>
+            <span class="section-tag">About Me</span>
+            <h1>My Journey</h1>
         </div>
 
         <div class="about-grid">
-            <!-- Professional Growth Card -->
-            <div class="about-card timeline">
-                <div class="card-content">
-                    <h2>Professional Growth</h2>
-                    <div class="timeline-items">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Senior Backend Developer</h3>
-                                <p>Leading architecture design and implementation</p>
-                                <span class="timeline-date">2023 - Present</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Full Stack Developer</h3>
-                                <p>Full-cycle application development</p>
-                                <span class="timeline-date">2021 - 2023</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Junior Developer</h3>
-                                <p>Web development and maintenance</p>
-                                <span class="timeline-date">2020 - 2021</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Stats Overview -->
+            <div class="about-card stats-card">
+                <div class="stat-item">
+                    <div class="stat-value">2+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">15+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">5+</div>
+                    <div class="stat-label">Technologies</div>
                 </div>
             </div>
 
-            <!-- Key Projects Card -->
-            <div class="about-card projects">
-                <div class="card-content">
-                    <h2>Notable Projects</h2>
-                    <div class="project-items">
-                        <div class="project-item">
-                            <div class="project-icon">🤖</div>
-                            <div class="project-details">
-                                <h3>AI-Powered Analytics</h3>
-                                <p>Machine learning solution for predictive business insights</p>
-                                <div class="tech-used">Python • TensorFlow • AWS</div>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-icon">💼</div>
-                            <div class="project-details">
-                                <h3>Enterprise Resource Platform</h3>
-                                <p>Scalable ERP system for manufacturing</p>
-                                <div class="tech-used">Java • Spring Boot • PostgreSQL</div>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-icon">🌐</div>
-                            <div class="project-details">
-                                <h3>Cloud Migration</h3>
-                                <p>Legacy system modernization to cloud infrastructure</p>
-                                <div class="tech-used">Docker • AWS • Terraform</div>
-                            </div>
-                        </div>
+            <!-- Current Role -->
+            <div class="about-card role-card">
+                <div class="role-content">
+                    <div class="role-header">
+                        <i class="fas fa-code"></i>
+                        <h2>Full Stack Developer</h2>
                     </div>
+                    <p>Currently leading development of web applications and APIs</p>
+                    <span class="time-badge">2024 - Present</span>
                 </div>
             </div>
 
-            <!-- Expertise Areas Card -->
-            <div class="about-card expertise">
-                <div class="card-content">
-                    <h2>Core Expertise</h2>
-                    <div class="expertise-grid">
-                        <div class="expertise-item">
-                            <i class="fas fa-server"></i>
-                            <h3>Backend Systems</h3>
-                            <p>Microservices architecture, API design, Database optimization</p>
-                        </div>
-                        <div class="expertise-item">
-                            <i class="fas fa-brain"></i>
-                            <h3>AI Solutions</h3>
-                            <p>Machine learning models, Data analysis, Predictive systems</p>
-                        </div>
-                        <div class="expertise-item">
-                            <i class="fas fa-cloud"></i>
-                            <h3>Cloud Architecture</h3>
-                            <p>AWS infrastructure, Scalability, DevOps practices</p>
-                        </div>
+            <!-- Previous Role -->
+            <div class="about-card role-card">
+                <div class="role-content">
+                    <div class="role-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h2>Junior Developer</h2>
                     </div>
+                    <p>Full-stack development and system maintenance</p>
+                    <span class="time-badge">2023 - 2024</span>
                 </div>
             </div>
 
-            <!-- Achievements Card -->
-            <div class="about-card achievements">
-                <div class="card-content">
-                    <h2>Milestones</h2>
-                    <div class="achievement-stats">
-                        <div class="stat">
-                            <span class="number">15+</span>
-                            <span class="label">Enterprise Projects</span>
-                        </div>
-                        <div class="stat">
-                            <span class="number">99%</span>
-                            <span class="label">Client Satisfaction</span>
-                        </div>
-                        <div class="stat">
-                            <span class="number">24/7</span>
-                            <span class="label">Support Provided</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>

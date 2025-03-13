@@ -85,6 +85,9 @@
             },
             retina_detect: true
         });
+
+        // Verify EmailJS initialization
+        console.log('EmailJS initialized'); // Debug log
     });
 
     async function handleSubmit() {
@@ -92,18 +95,23 @@
         submitStatus = null;
         
         try {
-            await emailjs.send(
-                "service_9hcq2g4", // Your service ID
-                "template_gxanx4b", // Your template ID
+            console.log('Attempting to send email...'); // Debug log
+            const response = await emailjs.send(
+                "service_9hcq2g4",
+                "template_gxanx4b",
                 {
-                    from_name: formData.name,
-                    from_email: formData.email,
+                    name: formData.name,
+                    email: formData.email,
                     subject: formData.subject,
                     message: formData.message,
-                    to_email: 'mombejose@gmail.com'
+                    reply_to: "mombejose@gmail.com",
+                    to_email: "mombejose@gmail.com",
+                    company_name: "Mombe Digitals"
                 },
-                "B31rxbPMCio3oeS6_" // Your public key
+                "B31rxbPMCio3oeS6_"
             );
+            
+            console.log('Email sent successfully:', response);
             
             submitStatus = {
                 type: 'success',
@@ -119,10 +127,10 @@
             };
             
         } catch (error) {
-            console.error('Email error:', error);
+            console.error('Detailed email error:', error);
             submitStatus = {
                 type: 'error',
-                message: 'Oops! Something went wrong. Please try again or use the direct email link.'
+                message: `Error: ${error.message || 'Something went wrong. Please try again.'}`
             };
         } finally {
             isSubmitting = false;

@@ -5,9 +5,9 @@
   "type": "module",
   "homepage": "https://takuemombe.me",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && cp public/index.html public/404.html",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear --host"
+    "start": "sirv public --single"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",

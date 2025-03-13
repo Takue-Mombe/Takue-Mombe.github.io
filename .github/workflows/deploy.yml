@@ -29,6 +29,10 @@ jobs:
           touch public/.nojekyll
           echo "takuemombe.me" > public/CNAME
           cp public/index.html public/404.html
+          # Copy server files to public directory
+          cp server.js public/
+          cp package.json public/
+          cp package-lock.json public/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -43,5 +47,5 @@ jobs:
       - name: Start server
         run: |
           cd public
-          npm ci --production
+          npm install --omit=dev
           pm2 start server.js --name portfolio 

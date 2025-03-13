@@ -5,8 +5,8 @@
   "type": "module",
   "homepage": "https://takuemombe.me",
   "scripts": {
-    "start": "node server.js",
-    "build": "rollup -c && cp public/index.html public/404.html",
+    "start": "sirv public --single",
+    "build": "rollup -c",
     "dev": "rollup -c -w"
   },
   "devDependencies": {

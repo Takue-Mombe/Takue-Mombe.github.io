@@ -24,16 +24,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Setup deployment
+      - name: Prepare public directory
         run: |
           touch public/.nojekyll
           echo "takuemombe.me" > public/CNAME
           cp public/index.html public/404.html
-          # Ensure server.js is in the public folder for deployment
-          cp server.js public/
-          # Ensure package.json is in the public folder for dependencies
-          cp package.json public/
-          cp package-lock.json public/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

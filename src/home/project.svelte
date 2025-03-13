@@ -94,7 +94,7 @@
             image: "/images/projects/pdf-editor.jpg",
             tech: ["Python", "PyQt5", "PyPDF2", "Qt Designer"],
             github: "https://github.com/Takue-Mombe/PDF-Editor",
-            download: "/projects/PDF_Editor.exe",
+            download: "/projects/PDF_Editor.zip",
             category: "Desktop Application"
         },
         {

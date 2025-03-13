@@ -189,6 +189,42 @@
 
 <style>
     /* Add this to your existing CSS */
+    .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin: 5px;
+    }
+
+    .project-link i {
+        font-size: 1.1rem;
+    }
+
+    .project-link.github {
+        background: #24292e;
+        color: white;
+    }
+
+    .project-link.github:hover {
+        background: #1a1e22;
+        transform: translateY(-2px);
+    }
+
+    .project-link.live {
+        background: #007bff;
+        color: white;
+    }
+
+    .project-link.live:hover {
+        background: #0056b3;
+        transform: translateY(-2px);
+    }
+
     .project-link.download {
         background: #2ecc71;
         color: white;
@@ -196,6 +232,22 @@
 
     .project-link.download:hover {
         background: #27ae60;
+        transform: translateY(-2px);
+    }
+
+    .project-links {
+        width: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .projects-content {
+        position: relative;
+        z-index: 2;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .particles-js {

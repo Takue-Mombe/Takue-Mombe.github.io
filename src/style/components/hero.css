@@ -188,7 +188,7 @@
         justify-content: center;
         gap: 0.8rem;
         margin: 1.5rem 0;
-        width: 100px;
+        width: 100%;
     }
 
     .tech-stack {
@@ -245,7 +245,7 @@
     }
 
     .btn {
-        width: 100px;
+        width: 80%;
         text-align: center;
         padding: 0.5rem 0.8rem;
         font-size: 0.9rem;

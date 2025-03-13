@@ -182,7 +182,7 @@
             <span class="tooltip">WhatsApp</span>
         </a>
         <a href="https://x.com/JoseMombe" target="_blank" rel="noopener noreferrer" class="social-btn twitter">
-            <i class="fab fa-x-twitter"></i>
+            <i class="fab fa-twitter"></i>
             <span class="tooltip">Twitter</span>
         </a>
         <a href="mailto:mombejose@gmail.com" class="social-btn email">
@@ -206,6 +206,13 @@
     .contact-container {
         position: relative;
         z-index: 2;
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .floating-socials {
@@ -293,6 +300,65 @@
             right: auto;
             left: 50%;
             transform: translateX(-50%);
+        }
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        width: 90%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: white;
+    }
+
+    .submit-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 20px auto;
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+
+    .submit-btn:active {
+        transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .contact-container {
+            width: 95%;
+            padding: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
         }
     }
 </style>

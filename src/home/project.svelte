@@ -13,6 +13,78 @@
         }, { threshold: 0.1 });
 
         projectCards.forEach(card => observer.observe(card));
+
+        // Particles configuration
+        particlesJS('particles-projects', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#007bff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#007bff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
     });
 
     const projects = [
@@ -55,6 +127,7 @@
 </script>
 
 <section class="projects-section" id="projects">
+    <div id="particles-projects" class="particles-js"></div>
     <div id="projects-glow"></div>
     
     <div class="projects-content">
@@ -123,5 +196,19 @@
 
     .project-link.download:hover {
         background: #27ae60;
+    }
+
+    .particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .projects-content {
+        position: relative;
+        z-index: 2;
     }
 </style>

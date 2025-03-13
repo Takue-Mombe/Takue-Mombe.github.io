@@ -3,6 +3,17 @@
     let name = "Takue Mombe";
     import "../style/components/hero.css";
 
+    // Add smooth scroll function
+    function scrollToSection(sectionId) {
+        const element = document.querySelector(sectionId);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+
     onMount(() => {
         // Make sure particles.js is loaded
         if (window.particlesJS) {
@@ -44,8 +55,18 @@
                 Specialized in full-stack development with expertise in modern web technologies.
             </p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn primary">View Projects</a>
-                <a href="#contact" class="btn secondary">Get in Touch</a>
+                <button 
+                    class="btn primary" 
+                    on:click={() => scrollToSection('#projects')}
+                >
+                    View Projects
+                </button>
+                <button 
+                    class="btn secondary" 
+                    on:click={() => scrollToSection('#contact')}
+                >
+                    Get in Touch
+                </button>
             </div>
             <div class="tech-stack">
                 <span class="tech-tag">Java</span>
@@ -65,3 +86,21 @@
         </div>
     </main>
 </div>
+
+<style>
+    /* Add these styles if not already in your hero.css */
+    .btn {
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+</style>

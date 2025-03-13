@@ -24,15 +24,29 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Create .nojekyll
-        run: touch public/.nojekyll
-
-      - name: Add CNAME file
-        run: echo "takuemombe.me" > public/CNAME
+      - name: Setup deployment
+        run: |
+          touch public/.nojekyll
+          echo "takuemombe.me" > public/CNAME
+          cp public/index.html public/404.html
+          # Ensure server.js is in the public folder for deployment
+          cp server.js public/
+          # Ensure package.json is in the public folder for dependencies
+          cp package.json public/
+          cp package-lock.json public/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: public
           branch: gh-pages
-          clean: true 
+          clean: true
+
+      - name: Install PM2 globally
+        run: npm install -g pm2
+
+      - name: Start server
+        run: |
+          cd public
+          npm ci --production
+          pm2 start server.js --name portfolio 

@@ -1,6 +1,7 @@
 <script>
     import '../style/components/contact.css'
     import { onMount } from 'svelte';
+    import emailjs from '@emailjs/browser';
 
     let formData = {
         name: '',
@@ -11,6 +12,9 @@
     
     let isSubmitting = false;
     let submitStatus = null;
+
+    // Initialize EmailJS with your public key
+    emailjs.init("B31rxbPMCio3oeS6_"); // Your public key
 
     onMount(() => {
         particlesJS('particles-contact', {
@@ -88,9 +92,18 @@
         submitStatus = null;
         
         try {
-            // Here you would typically send the data to your backend
-            // For demonstration, we'll simulate an API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await emailjs.send(
+                "service_9hcq2g4", // Your service ID
+                "template_gxanx4b", // Your template ID
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    to_email: 'mombejose@gmail.com'
+                },
+                "B31rxbPMCio3oeS6_" // Your public key
+            );
             
             submitStatus = {
                 type: 'success',
@@ -106,9 +119,10 @@
             };
             
         } catch (error) {
+            console.error('Email error:', error);
             submitStatus = {
                 type: 'error',
-                message: 'Oops! Something went wrong. Please try again.'
+                message: 'Oops! Something went wrong. Please try again or use the direct email link.'
             };
         } finally {
             isSubmitting = false;
@@ -163,7 +177,7 @@
                 ></textarea>
             </div>
             
-            <button type="submit" class="submit-btn">
+            <button type="submit" class="submit-btn" disabled={isSubmitting}>
                 {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
         </form>
@@ -192,173 +206,3 @@
     </div>
 </section>
 
-<style>
-    /* Add to existing styles */
-    .particles-js {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-
-    .contact-container {
-        position: relative;
-        z-index: 2;
-        width: 80%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px;
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .floating-socials {
-        z-index: 3;
-    }
-
-    /* Floating Social Buttons */
-    .floating-socials {
-        position: fixed;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        z-index: 1000;
-    }
-
-    .social-btn {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 24px;
-        text-decoration: none;
-        position: relative;
-        transition: all 0.3s ease;
-    }
-
-    .social-btn:hover {
-        transform: translateX(-10px);
-    }
-
-    .social-btn .tooltip {
-        position: absolute;
-        right: 60px;
-        background: #333;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 4px;
-        font-size: 14px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        white-space: nowrap;
-    }
-
-    .social-btn:hover .tooltip {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .whatsapp {
-        background: #25D366;
-    }
-
-    .twitter {
-        background: #000000;
-    }
-
-    .email {
-        background: #EA4335;
-    }
-
-    /* Responsive Design for Social Buttons */
-    @media (max-width: 768px) {
-        .floating-socials {
-            position: fixed;
-            bottom: 20px;
-            right: 50%;
-            transform: translateX(50%);
-            top: auto;
-            flex-direction: row;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-10px);
-        }
-
-        .social-btn .tooltip {
-            bottom: 60px;
-            right: auto;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-        width: 90%;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 15px;
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        background: white;
-    }
-
-    .submit-btn {
-        background-color: #007bff;
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin: 20px auto;
-    }
-
-    .submit-btn:hover {
-        background-color: #0056b3;
-        transform: translateY(-2px);
-    }
-
-    .submit-btn:active {
-        transform: translateY(0);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .contact-container {
-            width: 95%;
-            padding: 20px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            justify-content: center;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 12px;
-        }
-    }
-</style>

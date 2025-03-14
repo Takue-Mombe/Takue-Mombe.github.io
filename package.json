@@ -23,6 +23,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "express": "^4.21.2",
+    "lottie-web": "^5.12.2",
     "particles.js": "^2.0.0",
     "sirv-cli": "^2.0.0",
     "svelte-spa-router": "^4.0.1"

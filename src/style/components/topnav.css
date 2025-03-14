@@ -12,7 +12,7 @@ body {
 }
 
 .main-nav {
-    background: var(--baby-powder);
+    background: var(----cool-gray);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,7 @@ body {
 }
 
 .main-nav.scrolled {
-    background: rgba(253, 255, 247, 0.95);
+    background: var(--davys-gray);
     backdrop-filter: blur(10px);
     padding: 0.7rem 4rem;
 }

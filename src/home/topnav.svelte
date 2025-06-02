@@ -59,7 +59,7 @@
 
     <nav class="navigation" class:active={isMenuOpen}>
         <ul>
-            {#each ['Home', 'About', 'Projects', 'Contact'] as item, i}
+            {#each ['Home', 'About','Blogs', 'Projects', 'Contact'] as item, i}
                 <li style="--item-index: {i}">
                     <a 
                         href="#{item.toLowerCase()}" 

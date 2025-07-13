@@ -55,14 +55,13 @@
                     <div class="overall-rating">
                         <span class="rating-label">Overall Rating</span>
                         <span class="rating-value">4.83</span>
-                        <span class="rating-percentile">Top 9% of Developers</span>
+                       
                     </div>
                 </div>
             </div>
             
             <div class="newspaper-divider">
                 <div class="divider-line"></div>
-                <div class="divider-icon">📊</div>
                 <div class="divider-line"></div>
             </div>
         </div>

@@ -83,7 +83,7 @@
                             </div>
                             <div class="about-card timeline-item">
                                 <div class="timeline-header">
-                                    <span class="timeline-date">2023 - 2024</span>
+                                    <span class="timeline-date">2023 - 2025</span>
                                     <h4>Junior Developer</h4>
                                 </div>
                                 <p>Full-stack development and system maintenance, building strong foundations in modern web technologies.</p>
@@ -358,6 +358,11 @@
     @media (max-width: 768px) {
         .about-section {
             padding: 2rem 1rem;
+            min-height: auto;
+        }
+
+        .newspaper-container {
+            padding: 1.5rem;
         }
 
         .masthead-title {
@@ -370,10 +375,86 @@
 
         .stats-grid {
             grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .featured-quote {
+            padding: 1.5rem;
         }
 
         .featured-quote p {
             font-size: 1.1rem;
+        }
+
+        .lead-paragraph {
+            font-size: 1.1rem;
+            padding-left: 1rem;
+        }
+
+        .timeline-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-header h4 {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .about-section {
+            padding: 1.5rem 0.5rem;
+        }
+
+        .newspaper-container {
+            padding: 1rem;
+        }
+
+        .masthead-title {
+            font-size: 1.5rem;
+        }
+
+        .headline {
+            font-size: 1.5rem;
+        }
+
+        .category-label {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+        }
+
+        .lead-paragraph {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .stats-box {
+            padding: 1rem;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+        }
+
+        .featured-quote {
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .featured-quote p {
+            font-size: 1rem;
+        }
+
+        .timeline-item:hover {
+            transform: none;
+        }
+
+        .timeline-header h4 {
+            font-size: 1rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.9rem;
         }
     }
 </style>

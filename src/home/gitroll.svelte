@@ -18,9 +18,9 @@
                 languages: ['JavaScript', 'Java', 'Python', 'TypeScript', 'HTML/CSS'],
                 topSkills: ['Clean Code', 'Security-Focused Development', 'Full Stack Development', 'Reliable Architecture', 'API Integration'],
                 recentActivity: [
-                    { type: 'commit', project: 'AI Tasks', date: '2024-03-15', description: 'Enhanced security implementations' },
-                    { type: 'repository', project: 'Sekani Security', date: '2024-03-10', description: 'Clean code architecture' },
-                    { type: 'commit', project: 'AgriConnect', date: '2024-03-05', description: 'Reliability improvements' }
+                    { type: 'commit', project: 'AI Tasks', date: '2025-03-15', description: 'Enhanced security implementations' },
+                    { type: 'repository', project: 'Sekani Security', date: '2025-03-10', description: 'Clean code architecture' },
+                    { type: 'commit', project: 'AgriConnect', date: '2025-03-05', description: 'Reliability improvements' }
                 ],
                 metrics: {
                     reliability: 92,
@@ -574,18 +574,48 @@
         transform: translateX(5px);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         .newspaper-container {
-            padding: 20px;
+            padding: 30px 20px;
+        }
+
+        .metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
 
         .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .metric-number, .stat-number {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .newspaper-container {
+            padding: 20px 15px;
+        }
+
+        .masthead-title {
+            font-size: 2rem;
+        }
+
+        .section-headline {
+            font-size: 1.5rem;
+        }
+
+        .metrics-grid, .stats-grid {
             grid-template-columns: 1fr;
+            gap: 15px;
         }
 
         .activity-item {
             flex-direction: column;
             align-items: flex-start;
+            padding: 12px;
         }
 
         .activity-icon {
@@ -594,11 +624,13 @@
 
         .banner-content {
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
+            padding: 15px;
         }
 
         .banner-left, .banner-center, .banner-right {
             width: 100%;
+            text-align: center;
         }
 
         .banner-headline {
@@ -608,6 +640,63 @@
         .stats-cta {
             width: 100%;
             justify-content: center;
+        }
+
+        .language-list, .skill-list {
+            justify-content: center;
+        }
+
+        .language-item, .skill-item {
+            width: calc(50% - 10px);
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .newspaper-container {
+            padding: 15px 10px;
+        }
+
+        .masthead-title {
+            font-size: 1.5rem;
+        }
+
+        .section-headline {
+            font-size: 1.2rem;
+        }
+
+        .metric-number, .stat-number {
+            font-size: 1.8rem;
+        }
+
+        .activity-timeline {
+            gap: 10px;
+        }
+
+        .activity-details h4 {
+            font-size: 1rem;
+        }
+
+        .activity-details p, .activity-details time {
+            font-size: 0.85rem;
+        }
+
+        .language-item, .skill-item {
+            width: 100%;
+            font-size: 0.85rem;
+        }
+
+        .banner-tag {
+            font-size: 0.8rem;
+        }
+
+        .banner-subtext {
+            font-size: 0.8rem;
+        }
+
+        .stats-cta {
+            padding: 10px 15px;
+            font-size: 0.85rem;
         }
     }
 </style> 

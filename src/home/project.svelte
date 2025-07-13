@@ -72,7 +72,7 @@
                     <p class="masthead-subtitle">SPECIAL HIRING EDITION • Breaking News in Tech Innovation</p>
                 </div>
                 <div class="newspaper-date">
-                    <p class="date-line">URGENT EDITION 2024</p>
+                    <p class="date-line">URGENT EDITION 2025</p>
                     <p class="price-line">Value: Priceless Talent</p>
                 </div>
             </div>
@@ -213,7 +213,7 @@
 
         <div class="newspaper-footer">
             <div class="footer-line"></div>
-            <p class="footer-text">Don't Miss This Opportunity • Contact Now for a Technical Discussion • Portfolio Edition 2024</p>
+            <p class="footer-text">Don't Miss This Opportunity • Contact Now for a Technical Discussion • Portfolio Edition 2025</p>
         </div>
     </div>
 </section>

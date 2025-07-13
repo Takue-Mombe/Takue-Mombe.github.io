@@ -32,6 +32,7 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        padding: 0 15px;
     }
 
     .separator-line {
@@ -80,11 +81,47 @@
 
     @media (max-width: 768px) {
         .newspaper-separator {
-            padding: 20px 15px;
+            padding: 20px 10px;
+        }
+
+        .separator-content {
+            gap: 10px;
+            padding: 0 10px;
         }
 
         .separator-text {
+            font-size: 0.75rem;
+        }
+
+        .separator-icon {
             font-size: 0.8rem;
+        }
+
+        .separator-center {
+            gap: 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .newspaper-separator {
+            padding: 15px 5px;
+        }
+
+        .separator-content {
+            gap: 8px;
+            padding: 0 5px;
+        }
+
+        .separator-text {
+            font-size: 0.7rem;
+        }
+
+        .separator-icon {
+            display: none;
+        }
+
+        .separator-ornament {
+            max-width: 120px;
         }
     }
 </style> 

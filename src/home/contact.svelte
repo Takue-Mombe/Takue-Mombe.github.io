@@ -138,7 +138,7 @@
             <div class="newspaper-masthead">
                 <div class="newspaper-title">
                     <h1 class="masthead-title">THE DAILY DEVELOPER</h1>
-                    <p class="masthead-subtitle">Est. 2024 • Vol. 1, No. 1 • www.takuemombe.me</p>
+                    <p class="masthead-subtitle">Est. 2025 • Vol. 1, No. 1 • www.takuemombe.me</p>
                 </div>
                 <div class="newspaper-date">
                     <p class="date-line">{new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</p>
@@ -268,7 +268,7 @@
         
         <div class="newspaper-footer">
             <div class="footer-line"></div>
-            <p class="footer-text">© 2024 The Daily Developer. All rights reserved. | Next Edition: Tomorrow Morning</p>
+            <p class="footer-text">© 2025 The Daily Developer. All rights reserved. | Next Edition: Tomorrow Morning</p>
         </div>
     </div>
     
@@ -547,32 +547,130 @@
         right: 70px;
     }
     
-    @media (max-width: 1000px) {
+    @media (max-width: 1024px) {
         .contact-columns {
             flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-form {
+            max-width: 100%;
+        }
+
+        .contact-info {
+            padding-left: 0;
+            border-left: none;
+            border-top: 1px solid #ddd;
+            padding-top: 2rem;
         }
     }
-    
+
     @media (max-width: 768px) {
         .newspaper-container {
             padding: 20px;
         }
-        
+
+        .masthead-title {
+            font-size: 2rem;
+        }
+
+        .section-headline {
+            font-size: 1.8rem;
+        }
+
         .floating-socials {
             bottom: 20px;
             right: 20px;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .submit-btn {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-info-item {
+            padding: 1rem;
+        }
+
+        .info-title {
+            font-size: 1.1rem;
+        }
+
+        .info-text {
+            font-size: 0.9rem;
         }
     }
-    
+
     @media (max-width: 480px) {
+        .newspaper-container {
+            padding: 15px;
+        }
+
+        .masthead-title {
+            font-size: 1.5rem;
+        }
+
+        .section-headline {
+            font-size: 1.5rem;
+        }
+
         .social-btn {
             width: 40px;
             height: 40px;
             font-size: 1rem;
         }
-        
+
         .tooltip {
             display: none;
+        }
+
+        .form-group {
+            margin-bottom: 0.8rem;
+        }
+
+        input, textarea {
+            padding: 0.7rem;
+            font-size: 0.85rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.7rem;
+            font-size: 0.85rem;
+        }
+
+        .contact-info-item {
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .info-title {
+            font-size: 1rem;
+        }
+
+        .info-text {
+            font-size: 0.85rem;
+        }
+
+        .floating-socials {
+            bottom: 15px;
+            right: 15px;
+            gap: 8px;
         }
     }
 </style>
